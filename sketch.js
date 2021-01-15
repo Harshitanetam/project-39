@@ -35,14 +35,14 @@ function setup() {
 	 
 
 	ground1=createSprite(100,650,300,100);
-	ground1.velocityX=3;
+	ground1.velocityX=-3;
 	//ground1.x=ground1.width/2;
 
 	ground2=createSprite(500,650,300,100);
 	ground2.velocityX=-3;
 
 	ground3=createSprite(900,650,300,100);
-	ground3.velocityX=3;
+	ground3.velocityX=-3;
 
 	bird=createSprite(200,580);
 	bird.addImage(birdImg);
@@ -78,25 +78,26 @@ function setup() {
 	  backGround.x=backGround.width/2
   }
   
-  if(ground1.x<0){
+  if(ground1.x<-150){
 	reset();
- }
+	}
+  if(ground2.x<-150){
+		ground2.x=1100;
+	}
+  if(ground3.x<-150){
+		ground3.x=1100;
+	}
 
   bird.collide(invisibleGround);
 
   }
-//if(ground1.x<400){
-//	ground1.x=ground1.width/2
-//}
-
-//
 
  drawSprites();
   }
    
 function reset(){
 
-	ground1.x=400;
+	ground1.x=1100;
 }
   
  
